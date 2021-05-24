@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <link rel="icon" type="image/png" href="/images/snake-icon.png">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+  <style>
+    #gameScreen {
+      display: none
+    }
+  </style>
+</head>
+<body class="bg-light">
+  <section class="vh-100">
+    <div class="container h-100">
+      <div class="h-100" id="homeScreen" >
+        <div class="d-flex flex-column align-items-center justify-content-center h-100">
+          <h1>Welcome to Snake Game</h1>
+          <br><br>
+          <div class="text-info d-flex flex-column align-items-center justify-content-center">
+            <h3>Quick rules</h3>
+            <ul>
+              <li>This is a two player game.</li>
+              <li>Guide your snake with the arrow keys to eat randomly placed food. </li>
+              <li>You lose by eating yourself or by bumping into the edges of the game screen.</li>
+              <li>The objective is to be the last snake standing! </li>
+            </ul>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-outline-primary" id="create-game-btn"> New Game </button>
+            <div class="align-items-center"> or </div>
+            <div class="input-group-prepend">
+            
+              <input id="gameId" type="text" placeholder="ENTER GAME ID..">
+            
+            <button type="submit" class="btn btn-outline-primary" id="join-game-btn"> Join Game
+
+          </button>
+          </div>
+
+        </div>
+      </div>
+      <div id="gameScreen" class="h-150 w-150">
+        <div class="d-flex flex-column align-items-center justify-content-center h-100">
+          <h3>The game code is <span type="text" class="text-info" id='display-gameId'></span></h3>
+          <button class="btn btn-outline-secondary" id="copy-btn" onclick="copy()">Copy</button>
+          <br>
+          <div style="height: 600px; width: 800px">
+            <div style="position:absolute; margin-left: auto; margin-right: auto; left: 0; right: 0; text-align: center;">
+              <canvas id="canvas" tableindex="1" style="border:1px solid #020202;"></canvas>
+            </div>
+            <div class="position-relative d-flex flex-column align-items-center justify-content-center h-100" id="message_box" >
+              <h5 id="message"></h5>
+              <br>
+              <h3 class="text-secondary" id="counter"></h3><h3 class="text-primary" id="counter-value"></h3>
+              </div>
+          </div>
+
+        </div> 
+      </div>
+
+    </div>
+  </section>
+  <script src="constants.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
