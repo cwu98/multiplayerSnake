@@ -1,4 +1,4 @@
-const socket = io('https://snakesinsockets.herokuapp.com/');
+const socket = io('http:/localhost:3001');
 let playerNum = 0;
 
 socket.on('gameState', handleGameState);
