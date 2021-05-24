@@ -1,13 +1,18 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const server = require('http').createServer(app)
 const io = require('socket.io')(server, { cors:{origin: "*"}})
 const { gameLoop, initGameState, getVelocity} = require("./game.js")
 const { frame_rate, generateId} = require("./helpers.js")
-const PORT = 3001
-server.listen(PORT, () => {
+let port = process.env.PORT;
+if (port == null || port ==""){
+    port = 3001
+}
+server.listen(port, () => {
     console.log("Server running on port", PORT);
 })
+
 /*
 * Since we want multiple rooms, we use a global variable to hold the state of each room 
 */
