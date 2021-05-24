@@ -1,4 +1,4 @@
-const socket = io('https://evening-cove-30975.herokuapp.com/');
+const socket = io('https://secret-earth-68215.herokuapp.com/');
 let playerNum = 0;
 
 socket.on('gameState', handleGameState);
