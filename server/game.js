@@ -12,9 +12,9 @@ function initGameState() {
             y: 0,
           },
           snake: [
-            {x: 1, y: 10},
             {x: 2, y: 10},
             {x: 3, y: 10},
+            {x: 4, y: 10},
           ],
         }, {
         pos: {
@@ -22,12 +22,12 @@ function initGameState() {
             y: 20,
           },
           vel: {
-            x: 0,
+            x: 1,
             y: 0,
           },
           snake: [
-            {x: 6, y: 20},
-            {x: 5, y: 20},
+            {x: 2, y: 20},
+            {x: 3, y: 20},
             {x: 4, y: 20},
           ],
         }
@@ -48,11 +48,12 @@ function gameLoop(state) {
     } else {
         const player1 = state.players[0];
         const player2 = state.players[1];
+        console.log(player1, player2)
         player1.pos.x += player1.vel.x;
         player1.pos.y += player1.vel.y;
         player2.pos.x += player2.vel.x;
         player2.pos.y += player2.vel.y;
-
+        
         // check in bounds
         if (player1.pos.x < 0 || player1.pos.x > grid_size || player1.pos.y < 0 || player1.pos.y > grid_size){
            return 2; 
@@ -95,7 +96,7 @@ function gameLoop(state) {
                 }                
             }
             // update the player's snake to reflect its movement
-            player2.snake.push({...player1.pos});
+            player2.snake.push({...player2.pos});
             player2.snake.shift();
         }
     }

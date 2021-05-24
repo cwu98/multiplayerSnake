@@ -1,4 +1,4 @@
-const socket = io('https://secret-earth-68215.herokuapp.com/');
+const socket = io('http://localhost:3001');
 let playerNum = 0;
 
 socket.on('gameState', handleGameState);
