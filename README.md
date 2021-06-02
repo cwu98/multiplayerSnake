@@ -12,3 +12,9 @@ Then run the frontend (you can use a live-server).
 - increasing difficulty (increasing velocity of snake as the game goes on)
 - deploying backend to a cloud platform (Heroku, AWS, etc.)
 - feature to restart game when game ends (currently, users have to create a new game after a game has ended)
+
+### Screenshots
+![image](/screenshot/snake1.jpg?raw=true)
+![image](/screenshot/snake2.jpg?raw=true)
+![image](/screenshot/snake3.jpg?raw=true)
+![image](/screenshot/snake4.jpg?raw=true)
